@@ -61,7 +61,7 @@ public class OrderDomainServiceImpl implements OrderDomainService {
         }
     }
 
-    //Todo: Change loop for Map;
+    //TODO: Change loop for Map;
     private void setOrderProductInformation(Order order, Restaurant restaurant) {
         order.getItems().forEach(orderItem -> restaurant.getProducts().forEach(restaurantProduct -> {
             Product currentProduct = orderItem.getProduct();
