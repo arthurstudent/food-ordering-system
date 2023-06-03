@@ -28,3 +28,4 @@ services:
       "
     networks:
       - ${GLOBAL_NETWORK:-kafka}
+    #TODO: replication-factor = 3
