@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 public class OrderDataMapper {
 
     public Restaurant createOrderCommandToRestaurant(CreateOrderCommand createOrderCommand) {
-        return Restaurant.Builder.builder()
+        return Restaurant.builder()
                 .restaurantId(new RestaurantId(createOrderCommand.getRestaurantId()))
                 .products(createOrderCommand.getItems()
                         .stream()
@@ -34,7 +34,7 @@ public class OrderDataMapper {
     }
 
     public Order createOrderCommandToOrder(CreateOrderCommand createOrderCommand) {
-        return Order.Builder.builder()
+        return Order.builder()
                 .customerId(new CustomerId(createOrderCommand.getCustomerId()))
                 .restaurantId(new RestaurantId(createOrderCommand.getRestaurantId()))
                 .deliveryAddress(orderAddressToStreetAddress(createOrderCommand.getAddress()))
@@ -62,8 +62,7 @@ public class OrderDataMapper {
     private List<OrderItem> orderItemsToOrderItemsEntities(List<com.food.ordering.system.order.service.domain.dto.create.OrderItem> items) {
         return items
                 .stream()
-                .map(orderItem -> OrderItem.Builder
-                        .builder()
+                .map(orderItem -> OrderItem.builder()
                         .product(new Product(new ProductId(orderItem.getProductId())))
                         .price(new Money(orderItem.getPrice()))
                         .quantity(orderItem.getQuantity())
