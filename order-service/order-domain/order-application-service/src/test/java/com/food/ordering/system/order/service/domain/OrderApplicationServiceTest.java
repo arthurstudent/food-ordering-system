@@ -137,7 +137,7 @@ public class OrderApplicationServiceTest {
         Customer customer = new Customer();
         customer.setId(new CustomerId(CUSTOMER_ID));
 
-        Restaurant restaurant = Restaurant.Builder.builder()
+        Restaurant restaurant = Restaurant.builder()
                 .restaurantId(new RestaurantId(createOrderCommand.getRestaurantId()))
                 .products(List.of(
                         new Product(
@@ -189,7 +189,7 @@ public class OrderApplicationServiceTest {
 
     @Test
     public void testCreateOrderWithPassiveRestaurant() {
-        Restaurant restaurant = Restaurant.Builder.builder()
+        Restaurant restaurant = Restaurant.builder()
                 .restaurantId(new RestaurantId(createOrderCommand.getRestaurantId()))
                 .products(List.of(
                         new Product(
